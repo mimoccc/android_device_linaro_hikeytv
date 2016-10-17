@@ -1,0 +1,9 @@
+This directory contains some useful tools for the 
+hikey development workflow
+
+bluetooth.sh -  a useful host script for pairing bluetooth devices
+                such as remote controls and keyboards
+
+adb.sh -    a device script to setup adb over tcp. 
+            Useful if you're using any external usb devices given
+            the hikey's USB hardware limitations

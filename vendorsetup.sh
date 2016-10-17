@@ -37,3 +37,13 @@ function kernelcopy() {
     cp -v $ANDROID_KERNEL_SRC_PATH/arch/arm64/boot/Image-dtb $ANDROID_KERNEL_PREBUILT_PATH/Image-dtb
 
 }
+function kernelsync() {
+    cd $ANDROID_KERNEL_SRC_PATH
+    GIT_DIR=$ANDROID_KERNEL_SRC_PATH/.git git pull --verbose --all
+    cd -
+}
+function kernelreset() {
+    cd $ANDROID_KERNEL_SRC_PATH
+    GIT_DIR=$ANDROID_KERNEL_SRC_PATH/.git git reset --hard
+    cd -
+}
