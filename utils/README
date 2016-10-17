@@ -7,3 +7,7 @@ bluetooth.sh -  a useful host script for pairing bluetooth devices
 adb.sh -    a device script to setup adb over tcp. 
             Useful if you're using any external usb devices given
             the hikey's USB hardware limitations
+
+debugir.sh -    a device script to enable ir debugging and setup
+                rc-5 and rc-6 protocols, ir-keytable required see
+                https://github.com/trevd/android_external_keytable
