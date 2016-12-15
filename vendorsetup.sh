@@ -25,9 +25,13 @@ add_lunch_combo hikeytv-eng
 
 export ANDROID_KERNEL_SRC_PATH=/build/hikey-linaro
 export ANDROID_KERNEL_CROSS_COMPILE=aarch64-linux-androidkernel-
-export ANDROID_KERNEL_PREBUILT_PATH=$ANDROID_BUILD_TOP/device/linaro/hikey-kernel
+export ANDROID_KERNEL_PREBUILT_PATH=$(gettop)/device/linaro/hikey-kernel
+export PATH=$PATH:$(gettop)/device/linaro/hikeytv/utils
 function kernelconfig() {
     CROSS_COMPILE=$ANDROID_KERNEL_CROSS_COMPILE ARCH=$( get_build_var TARGET_ARCH )  make --directory=$ANDROID_KERNEL_SRC_PATH menuconfig
+}
+function kerneldefconfig() {
+    CROSS_COMPILE=$ANDROID_KERNEL_CROSS_COMPILE ARCH=$( get_build_var TARGET_ARCH )  make --directory=$ANDROID_KERNEL_SRC_PATH hikey_defconfig
 }
 function kernelbuild() {
     CROSS_COMPILE=$ANDROID_KERNEL_CROSS_COMPILE ARCH=$( get_build_var TARGET_ARCH )  make --directory=$ANDROID_KERNEL_SRC_PATH -j16
@@ -35,6 +39,12 @@ function kernelbuild() {
 function kernelcopy() {
     cp -v $ANDROID_KERNEL_SRC_PATH/arch/arm64/boot/dts/hisilicon/hi6220-hikey.dtb  $ANDROID_KERNEL_PREBUILT_PATH/hi6220-hikey.dtb
     cp -v $ANDROID_KERNEL_SRC_PATH/arch/arm64/boot/Image-dtb $ANDROID_KERNEL_PREBUILT_PATH/Image-dtb
+
+}
+function kernelcopyout {
+    kernelcopy
+    cp -v $ANDROID_KERNEL_PREBUILT_PATH/Image-dtb $ANDROID_PRODUCT_OUT/kernel
+    cp -v $ANDROID_KERNEL_PREBUILT_PATH/hi6220-hikey.dtb $ANDROID_PRODUCT_OUT/hi6220-hikey.dtb
 
 }
 function kernelsync() {
