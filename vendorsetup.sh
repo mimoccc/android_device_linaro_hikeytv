@@ -57,3 +57,7 @@ function kernelreset() {
     GIT_DIR=$ANDROID_KERNEL_SRC_PATH/.git git reset --hard
     cd -
 }
+
+function flashbootnodeps() {
+	source $(gettop)/device/linaro/hikeytv/utils/flashbootnodeps.sh
+}
