@@ -3,7 +3,7 @@
 # Get in there first to avoid being ignored
 PRODUCT_COPY_FILES +=  \
         device/linaro/hikeytv/sky_plus_rev8:system/etc/rc_keymaps/sky_plus_rev8 \
-        device/linaro/hikey/init.common.rc:root/init.hikey-common.rc \
+        device/linaro/hikey/init.common.rc:root/init.hikey.common.rc \
         device/linaro/hikeytv/init.common.rc:root/init.hikey.rc \
 
 
@@ -27,7 +27,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	fastbootd
 
-DEVICE_PACKAGE_OVERLAYS := device/linaro/hikeytv/overlay
+#DEVICE_PACKAGE_OVERLAYS := device/linaro/hikeytv/overlay
 
 #
 # Overrides

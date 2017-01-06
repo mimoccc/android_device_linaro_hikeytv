@@ -1,4 +1,4 @@
-import init.hikey-common.rc
+import init.hikey.common.rc
 
 service fastbootd /sbin/fastbootd -S
     socket fastbootd stream 660 system system
