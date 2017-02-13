@@ -1,0 +1,12 @@
+service keytable /system/bin/ir-keytable -p rc-5 -p rc-6 -c -w /system/etc/rc_keymaps/rc-pinnacle-pctv-hd
+    user root
+    group root
+    oneshot
+    disabled
+    
+    
+on property:sys.boot_completed=1
+	start keytable
+
+
+

@@ -61,3 +61,6 @@ function kernelreset() {
 function flashbootnodeps() {
 	source $(gettop)/device/linaro/hikeytv/utils/flashbootnodeps.sh
 }
+function flashlivetv() {
+	source $(gettop)/device/linaro/hikeytv/utils/mklivetv.sh
+}
