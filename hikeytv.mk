@@ -1,5 +1,9 @@
 
 # Inherit the atv_base and device configurations
+TARGET_PREBUILT_KERNEL := device/linaro/hikey-kernel/Image-dtb
+TARGET_PREBUILT_DTB := device/linaro/hikey-kernel/hi6220-hikey.dtb
+TARGET_FSTAB := fstab.hikey
+
 
 $(call inherit-product, device/linaro/hikey/hikey/device-hikey.mk)
 $(call inherit-product, device/linaro/hikey/device-common.mk)

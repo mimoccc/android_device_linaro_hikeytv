@@ -64,3 +64,6 @@ function flashbootnodeps() {
 function flashlivetv() {
 	source $(gettop)/device/linaro/hikeytv/utils/mklivetv.sh
 }
+function flashlivetvall() {
+	source $(gettop)/device/linaro/hikeytv/utils/mklivetvall.sh
+}
