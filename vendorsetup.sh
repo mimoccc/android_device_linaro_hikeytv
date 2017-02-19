@@ -52,6 +52,10 @@ function kernelsync() {
     GIT_DIR=$ANDROID_KERNEL_SRC_PATH/.git git pull --verbose --all
     cd -
 }
+function kroot() {
+    cd $ANDROID_KERNEL_SRC_PATH
+    
+}
 function kernelreset() {
     cd $ANDROID_KERNEL_SRC_PATH
     GIT_DIR=$ANDROID_KERNEL_SRC_PATH/.git git reset --hard

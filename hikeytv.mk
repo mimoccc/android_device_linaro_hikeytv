@@ -5,6 +5,13 @@ TARGET_PREBUILT_DTB := device/linaro/hikey-kernel/hi6220-hikey.dtb
 TARGET_FSTAB := fstab.hikey
 
 
+PRODUCT_COPY_FILES +=  \
+	device/linaro/hikeytv/etc/media_codecs.xml:system/etc/media_codecs.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
+	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+
+
 $(call inherit-product, device/linaro/hikey/hikey/device-hikey.mk)
 $(call inherit-product, device/linaro/hikey/device-common.mk)
 
@@ -22,8 +29,7 @@ PRODUCT_PACKAGES += LiveTv
 PRODUCT_COPY_FILES += \
 	device/google/atv/permissions/com.google.android.tv.installed.xml:system/etc/permissions/com.google.android.tv.installed.xml
 
-
-
+	
 
 PRODUCT_COPY_FILES +=  \
         device/linaro/hikeytv/etc/rc_keymaps/rc-pinnacle-pctv-hd:system/etc/rc_keymaps/rc-pinnacle-pctv-hd \
